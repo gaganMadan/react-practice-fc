@@ -1,7 +1,8 @@
 import React,  { useState } from "react";
 import "./style.css";
+import Child from './Child';
 
-let App = () =>  {
+const App = () =>  {
   const [ count, setCount ] = useState(0);
   var id = 100;
 
@@ -10,7 +11,7 @@ let App = () =>  {
     console.log(id);
   }
       
-  
+  console.log('Parent Component');
   return (
     //{setCount({count: 1})}
    
@@ -18,6 +19,7 @@ let App = () =>  {
       <h1>Hello StackBlitz!{count}</h1>
       <p>Start editing to see some magic happen :)</p>
       <button onClick={e => handleClick(id)}>Click</button>
+      <Child obj={count}/>
     </div>
   );
 }
